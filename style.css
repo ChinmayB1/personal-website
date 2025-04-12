@@ -1,8 +1,327 @@
+/* Define accent color and global styles */
+:root {
+  --color-accent: oklch(65% 20% 250);
+}
+
 body {
   /* Set line height to 1.5 times the font size
      and use the OS's UI font as the website font
   */
   font: 100%/1.5 system-ui;
   
+  /* Prevent content from getting too wide and center it */
+  max-width: 100ch;
+  margin-inline: max(1em, (100% - 100ch) / 2);
+  
+  /* Add padding to prevent content from touching viewport edges */
+  padding-inline: 1em;
+  
+  /* Set accent color for form elements */
+  accent-color: var(--color-accent);
 }
+
+/* Make images responsive and slightly smaller */
+img {
+  max-width: 60%;
+  height: auto;
+  display: block;
+  margin: 1em 0;
+}
+
+/* Navigation styling */
+nav ul, 
+nav li {
+  display: contents;
+}
+
+nav {
+  display: flex;
+  margin-bottom: 2em;
+  border-bottom: 1px solid oklch(80% 3% 200);
+}
+
+nav a {
+  flex: 1;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  padding: 0.5em;
+  border-bottom: 0.2em solid transparent;
+}
+
+nav a.current {
+  border-bottom: 0.4em solid var(--color-accent);
+  padding-bottom: calc(0.5em - 0.4em);
+}
+
+nav a:hover {
+  border-bottom: 0.4em solid var(--color-accent);
+  padding-bottom: calc(0.5em - 0.4em);
+  background-color: oklch(from var(--color-accent) 95% 5% h);
+}
+
+/* Form styling */
+form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1em;
+}
+
+/* Make form controls use the same font as the rest of the page */
+input, 
+textarea, 
+button {
+  font: inherit;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Style form elements */
+form label {
+  align-self: baseline;
+}
+
+form textarea {
+  min-height: 8em;
+  resize: vertical;
+}
+
+form button {
+  grid-column: 1 / -1;
+  background: #f0f0f0;
+  border: 0.5px solid #ccc;
+  border-radius: 2px;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* Heading styles */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: 400%;
+  margin-bottom: 1em;
+}
+
+/* Projects grid layout */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  gap: 1em;
+}
+
+.projects article {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+}
+
+.projects h2 {
+  margin: 0;
+}
+
+.projects img {
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+/* Resume styling */
+.resume {
+  max-width: 80ch;
+  margin: 0 auto;
+  padding: 2em;
+  color: rgb(44, 62, 80);
+  font-family: system-ui;
+  background-color: #ffffff;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.resume h1 {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 0.2em;
+  color: #2c3e50;
+}
+
+.contact-info {
+  text-align: center;
+  margin-bottom: 2em;
+  color: #34495e;
+  padding: 1em;
+  border-bottom: 2px solid #e8f0fe;
+}
+
+.contact-info a {
+  color: #3498db;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-info a:hover {
+  color: #2980b9;
+}
+
+.resume section {
+  margin-bottom: 2em;
+  padding: 0.5em;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.resume section:hover {
+  background-color: #f8fafd;
+}
+
+.resume h2 {
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid #3498db;
+  margin-bottom: 1em;
+  padding-bottom: 0.2em;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.resume h3 {
+  font-size: 1em;
+  margin: 0;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.organization {
+  margin-bottom: 0.2em;
+  color: #34495e;
+}
+
+.details {
+  color: #3498db;
+  text-align: right;
+  float: right;
+  font-weight: 500;
+}
+
+.resume ul {
+  margin: 0;
+  padding-left: 1em;
+  list-style-type: none;
+}
+
+.resume li {
+  margin-bottom: 0.2em;
+  line-height: 1.4;
+  color: #34495e;
+}
+
+.resume li::before {
+  content: "•";
+  color: #3498db;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.skills {
+  background-color: #f8fafd;
+  padding: 1em;
+  border-radius: 4px;
+  border-left: 3px solid #3498db;
+}
+
+.skills p {
+  margin: 0;
+  color: #34495e;
+}
+
+.job, .project, .degree, .course {
+  margin-bottom: 1.5em;
+  padding: 0.5em;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+}
+
+.job:hover, .project:hover, .degree:hover, .course:hover {
+  transform: translateX(5px);
+}
+
+.resume .projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3em;
+  margin-top: 1em;
+}
+
+.project h3 {
+  color: rgb(44, 62, 80);
+  font-size: 1.1em;
+  margin: 0;
+  margin-bottom: 0.3em;
+}
+
+.project .organization {
+  color: rgb(75, 85, 99);
+  margin-bottom: 1em;
+}
+
+.project ul {
+  margin: 0;
+  padding-left: 1em;
+  list-style-type: none;
+}
+
+.project li {
+  margin-bottom: 0.5em;
+  line-height: 1.4;
+  color: rgb(44, 62, 80);
+}
+
+.project li::before {
+  content: "•";
+  color: rgb(75, 85, 99);
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+@media (max-width: 768px) {
+  .resume {
+    padding: 1em;
+  }
+  
+  .resume .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 2em;
+  }
+}
+
+@media (max-width: 600px) {
+  .resume {
+    padding: 1em;
+  }
+  
+  .details {
+    float: none;
+    text-align: left;
+    display: block;
+    margin-bottom: 0.5em;
+  }
+}
+
+.resume .projects {
+  display: block;
+}
+
+.resume .projects article {
+  margin-bottom: 1em;
+  display: block;
+}
+
+
 
