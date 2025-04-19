@@ -5,7 +5,7 @@ function $$(selector, context = document) {
 }
 
 // Define the base path based on whether we're running locally or on GitHub Pages
-const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
+const BASE_PATH = (location.hostname === "localhost" || location.hostname === "https://chinmayb1.github.io/personal-website/")
   ? "/"                           // Local server
   : "/personal-website/";         // GitHub Pages repo name - matches your actual repo name
 
