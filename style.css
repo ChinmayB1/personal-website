@@ -1,6 +1,11 @@
 /* Define accent color and global styles */
 :root {
   --color-accent: oklch(65% 20% 250);
+  --border-color: oklch(50% 10% 200 / 40%);
+}
+
+html {
+  color-scheme: light dark;
 }
 
 body {
@@ -20,7 +25,7 @@ body {
   accent-color: var(--color-accent);
 }
 
-/* Make images responsive and slightly smaller */
+/* Making the image slightly smaller */
 img {
   max-width: 60%;
   height: auto;
@@ -28,7 +33,7 @@ img {
   margin: 1em 0;
 }
 
-/* Navigation styling */
+/* Navigation bar */
 nav ul, 
 nav li {
   display: contents;
@@ -37,7 +42,7 @@ nav li {
 nav {
   display: flex;
   margin-bottom: 2em;
-  border-bottom: 1px solid oklch(80% 3% 200);
+  border-bottom: 1px solid var(--border-color);
 }
 
 nav a {
@@ -57,17 +62,16 @@ nav a.current {
 nav a:hover {
   border-bottom: 0.4em solid var(--color-accent);
   padding-bottom: calc(0.5em - 0.4em);
-  background-color: oklch(from var(--color-accent) 95% 5% h);
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
 }
 
-/* Form styling */
+/* Contact form */
 form {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 1em;
 }
 
-/* Make form controls use the same font as the rest of the page */
 input, 
 textarea, 
 button {
@@ -76,7 +80,6 @@ button {
   box-sizing: border-box;
 }
 
-/* Style form elements */
 form label {
   align-self: baseline;
 }
@@ -106,7 +109,7 @@ h1 {
   margin-bottom: 1em;
 }
 
-/* Projects grid layout */
+/* Projects grid */
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
@@ -130,7 +133,7 @@ h1 {
   object-fit: cover;
 }
 
-/* Resume styling */
+/* Resume */
 .resume {
   max-width: 80ch;
   margin: 0 auto;
@@ -250,7 +253,6 @@ h1 {
 .job:hover, .project:hover, .degree:hover, .course:hover {
   transform: translateX(5px);
 }
-
 .resume .projects-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -264,7 +266,6 @@ h1 {
   margin: 0;
   margin-bottom: 0.3em;
 }
-
 .project .organization {
   color: rgb(75, 85, 99);
   margin-bottom: 1em;
@@ -301,19 +302,6 @@ h1 {
   }
 }
 
-@media (max-width: 600px) {
-  .resume {
-    padding: 1em;
-  }
-  
-  .details {
-    float: none;
-    text-align: left;
-    display: block;
-    margin-bottom: 0.5em;
-  }
-}
-
 .resume .projects {
   display: block;
 }
@@ -321,6 +309,19 @@ h1 {
 .resume .projects article {
   margin-bottom: 1em;
   display: block;
+}
+
+/* Color scheme switcher */
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 80%;
+}
+
+.color-scheme select {
+  font: inherit;
+  font-size: 100%;
 }
 
 
