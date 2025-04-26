@@ -1,0 +1,74 @@
+[
+  {
+    "title": "Power Outage Analysis",
+    "year": 2025,
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Explored a dataset that recorded major power outages in the U.S. In particular we tried to answer: What is the relationship between the different classifications of regions, namely states and climate region, and the average outage duration?"
+  },
+  {
+    "title": "Predicting Course Availability in First/Second Pass Enrollment at UCSD",
+    "year": 2025,
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "This project addresses a major challenge for UCSD students: deciding which classes to enroll in during first and second pass"
+  },
+  {
+    "title": "An Expository Visualisation on Grocery Store Foods",
+    "year": 2025,
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Created a visualisation exploring the GroceryDB dataset. In particular I answered the question: 'When supermarkets market private‑label lines as “healthy” alternatives, do those store brands actually contain fewer ultra‑processed items than their national‑brand equivalents?'"
+  },
+  {
+    "title": "Ipsum dolor sit amet",
+    "year": 2024,
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptatum, quibusdam, voluptates, quos voluptatibus quod quas voluptas quidem quae quia."
+  },
+  {
+    "title": "Consectetur adipisicing elit amet",
+    "year": 2024,
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptatum, quibusdam, voluptates, quos voluptatibus quod quas voluptas quidem quae quia."
+  },
+  {
+    "title": "Elit amet consectetur adipisicing",
+    "year": 2024,
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptatum, quibusdam, voluptates, quos voluptatibus quod quas voluptas quidem quae quia."
+  },
+  {
+    "title": "Adipisicing elit amet consectetur",
+    "year": 2024,
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptatum, quibusdam, voluptates, quos voluptatibus quod quas voluptas quidem quae quia."
+  },
+  {
+    "title": "Sit amet consectetur adipisicing",
+    "year": 2023,
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptatum, quibusdam, voluptates, quos voluptatibus quod quas voluptas quidem quae quia."
+  },
+  {
+    "title": "Lorem dolor sit amet",
+    "year": 2023,
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptatum, quibusdam, voluptates, quos voluptatibus quod quas voluptas quidem quae quia."
+  },
+  {
+    "title": "Amet sit consectetur elit",
+    "year": 2023,
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptatum, quibusdam, voluptates, quos voluptatibus quod quas voluptas quidem quae quia."
+  },
+  {
+    "title": "Consectetur sit amet elit",
+    "year": 2023,
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptatum, quibusdam, voluptates, quos voluptatibus quod quas voluptas quidem quae quia."
+  },
+  {
+    "title": "Elit consectetur amet sit",
+    "year": 2022,
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptatum, quibusdam, voluptates, quos voluptatibus quod quas voluptas quidem quae quia."
+  }
+] 

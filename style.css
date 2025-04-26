@@ -324,5 +324,49 @@ h1 {
   font-size: 100%;
 }
 
+/* GitHub Stats */
+#profile-stats {
+  margin: 2em 0;
+}
+
+#profile-stats dl {
+  display: flex;
+  justify-content: space-between;
+  gap: 4em;
+  margin: 0;
+  padding: 0;
+}
+
+#profile-stats dl div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#profile-stats dt {
+  font-size: 1em;
+  color: #666;
+  margin-bottom: 0.5em;
+}
+
+#profile-stats dd {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  #profile-stats dl {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+  }
+  
+  #profile-stats dl div {
+    flex: 0 0 40%;
+  }
+}
+
 
 
