@@ -118,7 +118,7 @@ async function initProjects() {
       projectsContainer.innerHTML = '<p>Error: Could not load projects.</p>';
       return;
     }
-
+    
     // Initial render of projects and pie chart
     renderProjects(projects, projectsContainer, 'h2');
     renderPieChart(projects);

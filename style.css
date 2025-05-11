@@ -2,6 +2,19 @@
 :root {
   --color-accent: oklch(65% 20% 250);
   --border-color: oklch(50% 10% 200 / 40%);
+  --summary-bg: #fff;
+  --summary-fg: #222;
+  --summary-label: #6a737d;
+  --summary-border: #e1e4e8;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --summary-bg: #000;
+    --summary-fg: #fff;
+    --summary-label: #aeb4bb;
+    --summary-border: #222;
+  }
 }
 
 html {
@@ -453,6 +466,222 @@ h1 {
 .searchBar:focus {
   outline: 2px solid var(--color-accent);
   outline-offset: -1px;
+}
+
+/* Stats display styles */
+.stats {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5em 1em;
+  margin: 1em 0;
+  padding: 1em;
+  background: #f5f5f5;
+  border-radius: 4px;
+}
+
+.stats dt {
+  font-weight: bold;
+  color: #666;
+}
+
+.stats dd {
+  margin: 0;
+  color: #333;
+}
+
+.stats abbr {
+  text-decoration: none;
+  border-bottom: 1px dotted #666;
+  cursor: help;
+}
+
+/* Summary stats card styles */
+.summary-stats {
+  background: var(--summary-bg);
+  border: 1px solid var(--summary-border);
+  border-radius: 16px;
+  padding: 2em 2em 1em 2em;
+  margin: 2em 0;
+  box-shadow: 0 1px 2px rgba(27,31,35,0.03);
+  color: var(--summary-fg);
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.summary-heading {
+  font-size: 2em;
+  font-weight: 700;
+  margin: 0 0 1em 0;
+  color: var(--summary-fg);
+}
+
+.summary-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3em;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.summary-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 90px;
+}
+
+.summary-label {
+  color: var(--summary-label);
+  font-size: 1em;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.2em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.summary-value {
+  font-size: 2.5em;
+  font-weight: 400;
+  color: var(--summary-fg);
+  line-height: 1.1;
+  transition: color 0.2s;
+}
+
+@media (max-width: 700px) {
+  .summary-row {
+    flex-direction: column;
+    gap: 1.5em;
+    align-items: stretch;
+  }
+  .summary-block {
+    align-items: flex-start;
+  }
+}
+
+/* Chart styles */
+#chart {
+  margin: 2em 0;
+  width: 100%;
+}
+
+/* Gridlines */
+.gridlines line {
+  stroke: #ddd;
+  stroke-opacity: 0.7;
+  shape-rendering: crispEdges;
+}
+
+.gridlines path {
+  stroke-width: 0;
+}
+
+/* Circle styles */
+circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+  fill-opacity: 0.7;
+}
+
+circle:hover {
+  transform: scale(1.5);
+  fill-opacity: 1;
+}
+
+circle.selected {
+  fill: #ff6b6b;
+}
+
+/* Info/Tooltip styles */
+dl.info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5em 1em;
+  margin: 0;
+  padding: 1em;
+  transition-duration: 300ms;
+  transition-property: opacity, visibility;
+}
+
+dl.info dt {
+  font-weight: bold;
+  color: #666;
+}
+
+dl.info dd {
+  margin: 0;
+  color: #333;
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Tooltip specific */
+.tooltip {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  max-width: 350px;
+  transform: translate(10px, 10px);
+  pointer-events: none;
+}
+
+/* Brush selection */
+@keyframes marching-ants {
+  to {
+    stroke-dashoffset: -8;
+  }
+}
+
+.selection {
+  fill-opacity: 0.1;
+  stroke: black;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
+}
+
+/* Language breakdown */
+#language-breakdown {
+  margin-top: 2em;
+}
+
+/* Selection count */
+#selection-count {
+  font-weight: bold;
+  font-size: 1.1em;
+  margin: 1em 0;
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .tooltip {
+    background-color: rgba(0, 0, 0, 0.85);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .gridlines line {
+    stroke: #444;
+  }
+  
+  dl.info dt {
+    color: #aaa;
+  }
+  
+  dl.info dd {
+    color: #ddd;
+  }
+  
+  .selection {
+    stroke: white;
+  }
 }
 
 
