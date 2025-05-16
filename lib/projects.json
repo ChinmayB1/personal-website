@@ -1,5 +1,12 @@
 [
   {
+    "title": "Bikewatching Visualization",
+    "year": 2025,
+    "image": "https://placehold.co/600x400/3498db/ffffff?text=Bikewatching",
+    "description": "Interactive bike sharing visualization that allows users to filter by time and analyze patterns of bike departures and arrivals across the network.",
+    "url": "https://chinmayb1.github.io/biking-visualisation/"
+  },
+  {
     "title": "Power Outage Analysis",
     "year": 2025,
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",
@@ -16,12 +23,6 @@
     "year": 2025,
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",
     "description": "Created a visualisation exploring the GroceryDB dataset. In particular I answered the question: 'When supermarkets market private‑label lines as “healthy” alternatives, do those store brands actually contain fewer ultra‑processed items than their national‑brand equivalents?'"
-  },
-  {
-    "title": "Ipsum dolor sit amet",
-    "year": 2024,
-    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptatum, quibusdam, voluptates, quos voluptatibus quod quas voluptas quidem quae quia."
   },
   {
     "title": "Consectetur adipisicing elit amet",

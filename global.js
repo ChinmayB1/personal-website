@@ -5,8 +5,8 @@ function $$(selector, context = document) {
 }
 
 // Define the base path based on whether we're running locally or on GitHub Pages
-const BASE_PATH = (location.hostname === "localhost" || location.hostname === "https://chinmayb1.github.io/personal-website/")
-//const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
+//const BASE_PATH = (location.hostname === "localhost" || location.hostname === "https://chinmayb1.github.io/personal-website/")
+const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
   ? "/"                           // Local server
   : "/personal-website/";         // GitHub Pages repo name - matches your actual repo name
 
@@ -130,7 +130,9 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
   // Render each project
   projects.forEach(project => {
     const article = document.createElement('article');
-    article.innerHTML = `
+    
+    // If project has URL, wrap it in an anchor tag
+    let projectContent = `
       <${headingLevel}>${project.title}</${headingLevel}>
       <img src="${project.image}" alt="${project.title}">
       <div class="project-content">
@@ -138,6 +140,20 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
         <p class="project-year">c. ${project.year}</p>
       </div>
     `;
+    
+    if (project.url) {
+      // Create a wrapper link
+      const link = document.createElement('a');
+      link.href = project.url;
+      link.target = '_blank';
+      link.classList.add('project-link');
+      link.innerHTML = projectContent;
+      article.appendChild(link);
+    } else {
+      // No URL, just add the content directly
+      article.innerHTML = projectContent;
+    }
+    
     containerElement.appendChild(article);
   });
 }
