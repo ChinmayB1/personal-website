@@ -850,9 +850,16 @@ h2 + #files {
   top: 2rem;
   left: 0;
   bottom: auto;
-  height: 60vh;
+  height: 90vh; /* Increased height to accommodate file visualization */
   flex: 1; /* Take remaining space */
   min-width: 600px; /* Ensure chart has enough space */
+  overflow-y: auto; /* Allow scrolling if content is too tall */
+}
+
+#scatter-plot h3 {
+  margin: 2rem 0 1rem 0;
+  font-size: 1.2em;
+  color: var(--color-accent);
 }
 
 .step {
@@ -916,8 +923,9 @@ h2 + #files {
   #scatter-plot {
     position: relative;
     top: 0;
-    height: 50vh;
+    height: auto;
     min-width: auto;
+    overflow-y: visible;
   }
   
   .step {

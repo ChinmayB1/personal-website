@@ -121,8 +121,12 @@ function renderScatterPlot(data, commits) {
   function brushed(event) {
     const selection = event.selection;
     d3.selectAll('circle').classed('selected', d => isCommitSelected(selection, d));
-    renderSelectionCount(selection, commits);
+    const selectedCommits = renderSelectionCount(selection, commits);
     renderLanguageBreakdown(selection, commits, data);
+    
+    // Update file visualization with selected commits
+    const commitsToShow = selectedCommits.length > 0 ? selectedCommits : filteredCommits;
+    updateFileDisplay(commitsToShow);
   }
   
   svg.call(d3.brush().on('start brush end', brushed));
